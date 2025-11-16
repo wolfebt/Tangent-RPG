@@ -1,4 +1,4 @@
-// Version 22.6 - Fully functional and complete implementation.
+// Version 22.8 - Final Accordion Implementation
 import * as state from '../js/state.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1052,6 +1052,16 @@ document.addEventListener('DOMContentLoaded', () => {
             markAllLayersAsDirty();
             saveStateForUndo("Initial State");
             renderLoop();
+
+            // Ensure all accordions are closed by default after initialization
+            document.querySelectorAll('.accordion-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.classList.remove('active');
+            });
+
+
         } catch (error) {
             console.error("Initialization Failed:", error);
             state.showModal("A critical error occurred while loading. Please refresh.");
@@ -1060,4 +1070,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initialize();
 });
-
