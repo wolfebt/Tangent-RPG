@@ -65,10 +65,16 @@
                                 <button id="toolTextBtn" class="tool-btn">Text</button>
                                 <button id="toolFogBtn" class="tool-btn">Fog</button>
                                 <button id="toolSelectBtn" class="tool-btn">Select</button>
-                                <button id="eraserToolBtn">Eraser</button>
+                                <div class="relative">
+                                    <button id="eraserToolBtn">Eraser</button>
+                                    <div id="eraserDropdownMenu" class="file-dropdown hidden">
+                                        <button id="eraseTerrainBtn" class="file-dropdown-item">Erase Terrain</button>
+                                        <button id="eraseObjectsBtn" class="file-dropdown-item">Erase Objects</button>
+                                    </div>
+                                </div>
                             </div>
                             <!-- Tool Options -->
-                            <div id="terrainContentPanel" class="hidden">
+                            <div id="terrainContentPanel">
                                 <div class="control-panel mb-4">
                                     <label for="brushSize">Brush Size: <span id="brushSizeValue">1</span></label>
                                     <input type="range" id="brushSize" min="1" max="10" value="1">
@@ -115,12 +121,12 @@
                             <button id="redoBtn">Redo</button>
                         </div>
                     </div>
-
+                    
                     <!-- AI Assistant -->
                     <div class="control-panel mb-4">
                         <h3 class="accordion-header">AI Assistant</h3>
                         <div class="accordion-content">
-                            <div id="ai-controls" class="ai-controls-column">
+                            <div class="ai-controls-column">
                                 <input type="text" id="ai-prompt-initial" placeholder="Describe an asset to generate...">
                                 <select id="ai-drawing-style">
                                     <option>Watercolor</option>
